@@ -917,7 +917,11 @@ boolean G_Responder (event_t* ev)
 	} while (!playeringame[displayplayer] && displayplayer != consoleplayer); 
 	return true; 
     }
-    
+    if (demoplayback && ev->type == ev_keydown && ev->data1 == KEY_ENTER)
+    {
+        demoplayback = false;
+        return true;
+    }
     // any other key pops up menu if in demos
     if (gameaction == ga_nothing && !singledemo && 
 	(demoplayback || gamestate == GS_DEMOSCREEN) 

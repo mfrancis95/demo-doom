@@ -920,6 +920,7 @@ boolean G_Responder (event_t* ev)
     if (demoplayback && ev->type == ev_keydown && ev->data1 == KEY_ENTER)
     {
         demoplayback = false;
+        usergame = true;
         return true;
     }
     // any other key pops up menu if in demos

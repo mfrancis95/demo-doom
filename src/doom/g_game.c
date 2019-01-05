@@ -919,6 +919,7 @@ boolean G_Responder (event_t* ev)
     }
     if (demoplayback && ev->type == ev_keydown && ev->data1 == KEY_ENTER)
     {
+        crispy->singleplayer = true;
         demoplayback = false;
         usergame = true;
         return true;
